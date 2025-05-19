@@ -7,12 +7,13 @@ package Archive::Unzip::Burst;
 # The license of the InfoZip library which is used by this module is
 # reproduced in full in the following paragraphs:
 #
-# This is version 2005-Feb-10 of the Info-ZIP copyright and license.
+# This is version 2009-Jan-02 of the Info-ZIP license.
 # The definitive version of this document should be available at
-# ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely.
+# ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely and
+# a copy at http://www.info-zip.org/pub/infozip/license.html.
 # 
 # 
-# Copyright (c) 1990-2005 Info-ZIP.  All rights reserved.
+# Copyright (c) 1990-2009 Info-ZIP.  All rights reserved.
 # 
 # For the purposes of this copyright and license, "Info-ZIP" is defined as
 # the following set of individuals:
@@ -24,7 +25,7 @@ package Archive::Unzip::Burst;
 #    Steve P. Miller, Sergio Monesi, Keith Owens, George Petrov, Greg Roelofs,
 #    Kai Uwe Rommel, Steve Salisbury, Dave Smith, Steven M. Schweda,
 #    Christian Spieler, Cosmin Truta, Antoine Verheijen, Paul von Behren,
-#    Rich Wales, Mike White
+#    Rich Wales, Mike White.
 # 
 # This software is provided "as is," without warranty of any kind, express
 # or implied.  In no event shall Info-ZIP or its contributors be held liable
@@ -33,31 +34,37 @@ package Archive::Unzip::Burst;
 # 
 # Permission is granted to anyone to use this software for any purpose,
 # including commercial applications, and to alter it and redistribute it
-# freely, subject to the following restrictions:
+# freely, subject to the above disclaimer and the following restrictions:
 # 
-#     1. Redistributions of source code must retain the above copyright notice,
-#        definition, disclaimer, and this list of conditions.
+#     1. Redistributions of source code (in whole or in part) must retain
+#        the above copyright notice, definition, disclaimer, and this list
+#        of conditions.
 # 
-#     2. Redistributions in binary form (compiled executables) must reproduce
-#        the above copyright notice, definition, disclaimer, and this list of
-#        conditions in documentation and/or other materials provided with the
-#        distribution.  The sole exception to this condition is redistribution
-#        of a standard UnZipSFX binary (including SFXWiz) as part of a
-#        self-extracting archive; that is permitted without inclusion of this
-#        license, as long as the normal SFX banner has not been removed from
-#        the binary or disabled.
+#     2. Redistributions in binary form (compiled executables and libraries)
+#        must reproduce the above copyright notice, definition, disclaimer,
+#        and this list of conditions in documentation and/or other materials
+#        provided with the distribution.  Additional documentation is not needed
+#        for executables where a command line license option provides these and
+#        a note regarding this option is in the executable's startup banner.  The
+#        sole exception to this condition is redistribution of a standard
+#        UnZipSFX binary (including SFXWiz) as part of a self-extracting archive;
+#        that is permitted without inclusion of this license, as long as the
+#        normal SFX banner has not been removed from the binary or disabled.
 # 
 #     3. Altered versions--including, but not limited to, ports to new operating
-#        systems, existing ports with new graphical interfaces, and dynamic,
-#        shared, or static library versions--must be plainly marked as such
-#        and must not be misrepresented as being the original source.  Such
-#        altered versions also must not be misrepresented as being Info-ZIP
-#        releases--including, but not limited to, labeling of the altered
-#        versions with the names "Info-ZIP" (or any variation thereof, including,
-#        but not limited to, different capitalizations), "Pocket UnZip," "WiZ"
-#        or "MacZip" without the explicit permission of Info-ZIP.  Such altered
-#        versions are further prohibited from misrepresentative use of the
-#        Zip-Bugs or Info-ZIP e-mail addresses or of the Info-ZIP URL(s).
+#        systems, existing ports with new graphical interfaces, versions with
+#        modified or added functionality, and dynamic, shared, or static library
+#        versions not from Info-ZIP--must be plainly marked as such and must not
+#        be misrepresented as being the original source or, if binaries,
+#        compiled from the original source.  Such altered versions also must not
+#        be misrepresented as being Info-ZIP releases--including, but not
+#        limited to, labeling of the altered versions with the names "Info-ZIP"
+#        (or any variation thereof, including, but not limited to, different
+#        capitalizations), "Pocket UnZip," "WiZ" or "MacZip" without the
+#        explicit permission of Info-ZIP.  Such altered versions are further
+#        prohibited from misrepresentative use of the Zip-Bugs or Info-ZIP
+#        e-mail addresses or the Info-ZIP URL(s), such as to imply Info-ZIP
+#        will provide support for the altered versions.
 # 
 #     4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
 #        "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
@@ -86,7 +93,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.02_02';
+our $VERSION = '0.03';
 
 require XSLoader;
 XSLoader::load('Archive::Unzip::Burst', $VERSION);
@@ -175,7 +182,7 @@ Steffen Mueller, E<lt>smueller@cpan.orgE<gt>
 =head1 COPYRIGHT AND LICENSE
 
 The Perl and XS code as well as the compilation are
-copyright (C) 2007 by Steffen Mueller. The following paragraph describes
+copyright (C) 2007, 2025 by Steffen Mueller. The following paragraph describes
 the license for these components:
 
   This library is free software; you can redistribute it and/or modify
@@ -183,71 +190,71 @@ the license for these components:
   at your option, any later version of Perl 5 you may have available.
 
 The UnZip library which is included in full and unmodified in a
-subdirectory of this distribution is
-Copyright (c) 1990-2005 Info-ZIP.  All rights reserved. The full license
-text from the C<LICENSE> file in that directory is reproduced below.
+subdirectory of this distribution is:
 
-  This is version 2005-Feb-10 of the Info-ZIP copyright and license.
-  The definitive version of this document should be available at
-  ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely.
+  Copyright (c) 1990-2005 Info-ZIP.  All rights reserved. The full license
+  text from the C<LICENSE> file in that directory is reproduced below.
   
-  
-  Copyright (c) 1990-2005 Info-ZIP.  All rights reserved.
-  
-  For the purposes of this copyright and license, "Info-ZIP" is defined as
-  the following set of individuals:
-  
-     Mark Adler, John Bush, Karl Davis, Harald Denker, Jean-Michel Dubois,
-     Jean-loup Gailly, Hunter Goatley, Ed Gordon, Ian Gorman, Chris Herborth,
-     Dirk Haase, Greg Hartwig, Robert Heath, Jonathan Hudson, Paul Kienitz,
-     David Kirschbaum, Johnny Lee, Onno van der Linden, Igor Mandrichenko,
-     Steve P. Miller, Sergio Monesi, Keith Owens, George Petrov, Greg Roelofs,
-     Kai Uwe Rommel, Steve Salisbury, Dave Smith, Steven M. Schweda,
-     Christian Spieler, Cosmin Truta, Antoine Verheijen, Paul von Behren,
-     Rich Wales, Mike White
-  
-  This software is provided "as is," without warranty of any kind, express
-  or implied.  In no event shall Info-ZIP or its contributors be held liable
-  for any direct, indirect, incidental, special or consequential damages
-  arising out of the use of or inability to use this software.
-  
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely, subject to the following restrictions:
+    This is version 2005-Feb-10 of the Info-ZIP copyright and license.
+    The definitive version of this document should be available at
+    ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely.
+    
+    
+    Copyright (c) 1990-2005 Info-ZIP.  All rights reserved.
+    
+    For the purposes of this copyright and license, "Info-ZIP" is defined as
+    the following set of individuals:
+    
+       Mark Adler, John Bush, Karl Davis, Harald Denker, Jean-Michel Dubois,
+       Jean-loup Gailly, Hunter Goatley, Ed Gordon, Ian Gorman, Chris Herborth,
+       Dirk Haase, Greg Hartwig, Robert Heath, Jonathan Hudson, Paul Kienitz,
+       David Kirschbaum, Johnny Lee, Onno van der Linden, Igor Mandrichenko,
+       Steve P. Miller, Sergio Monesi, Keith Owens, George Petrov, Greg Roelofs,
+       Kai Uwe Rommel, Steve Salisbury, Dave Smith, Steven M. Schweda,
+       Christian Spieler, Cosmin Truta, Antoine Verheijen, Paul von Behren,
+       Rich Wales, Mike White
+    
+    This software is provided "as is," without warranty of any kind, express
+    or implied.  In no event shall Info-ZIP or its contributors be held liable
+    for any direct, indirect, incidental, special or consequential damages
+    arising out of the use of or inability to use this software.
+    
+    Permission is granted to anyone to use this software for any purpose,
+    including commercial applications, and to alter it and redistribute it
+    freely, subject to the following restrictions:
 
-      1. Redistributions of source code must retain the above copyright notice,
-         definition, disclaimer, and this list of conditions.
-  
-      2. Redistributions in binary form (compiled executables) must reproduce
-         the above copyright notice, definition, disclaimer, and this list of
-         conditions in documentation and/or other materials provided with the
-         distribution.  The sole exception to this condition is redistribution
-         of a standard UnZipSFX binary (including SFXWiz) as part of a
-         self-extracting archive; that is permitted without inclusion of this
-         license, as long as the normal SFX banner has not been removed from
-         the binary or disabled.
-  
-      3. Altered versions--including, but not limited to, ports to new operating
-         systems, existing ports with new graphical interfaces, and dynamic,
-         shared, or static library versions--must be plainly marked as such
-         and must not be misrepresented as being the original source.  Such
-         altered versions also must not be misrepresented as being Info-ZIP
-         releases--including, but not limited to, labeling of the altered
-         releases--including, but not limited to, labeling of the altered
-         versions with the names "Info-ZIP" (or any variation thereof, including,
-         but not limited to, different capitalizations), "Pocket UnZip," "WiZ"
-         or "MacZip" without the explicit permission of Info-ZIP.  Such altered
-         versions are further prohibited from misrepresentative use of the
-         Zip-Bugs or Info-ZIP e-mail addresses or of the Info-ZIP URL(s).
-  
-      4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
-         "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
-         own source and binary releases.
+        1. Redistributions of source code must retain the above copyright notice,
+           definition, disclaimer, and this list of conditions.
+    
+        2. Redistributions in binary form (compiled executables) must reproduce
+           the above copyright notice, definition, disclaimer, and this list of
+           conditions in documentation and/or other materials provided with the
+           distribution.  The sole exception to this condition is redistribution
+           of a standard UnZipSFX binary (including SFXWiz) as part of a
+           self-extracting archive; that is permitted without inclusion of this
+           license, as long as the normal SFX banner has not been removed from
+           the binary or disabled.
+    
+        3. Altered versions--including, but not limited to, ports to new operating
+           systems, existing ports with new graphical interfaces, and dynamic,
+           shared, or static library versions--must be plainly marked as such
+           and must not be misrepresented as being the original source.  Such
+           altered versions also must not be misrepresented as being Info-ZIP
+           releases--including, but not limited to, labeling of the altered
+           releases--including, but not limited to, labeling of the altered
+           versions with the names "Info-ZIP" (or any variation thereof, including,
+           but not limited to, different capitalizations), "Pocket UnZip," "WiZ"
+           or "MacZip" without the explicit permission of Info-ZIP.  Such altered
+           versions are further prohibited from misrepresentative use of the
+           Zip-Bugs or Info-ZIP e-mail addresses or of the Info-ZIP URL(s).
+    
+        4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
+           "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
+           own source and binary releases.
 
 To my best knowledge, it should be legal to use and distribute this Perl module
 and its enclosed library freely, as well as commercially provided the above
 license information is not stripped. Thus, the license of the InfoZip
 library should not collide with the license of the compilation.
-But I am not a lawyer.
 
 =cut

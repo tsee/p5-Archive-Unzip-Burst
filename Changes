@@ -1,5 +1,8 @@
 Revision history for Perl extension Archive::Unzip::Burst.
 
+0.03 Mon May 19 14:00 2025
+        - Update to unzip 6.00
+
 0.02_2 Fri May 16 13:58 2008
         - Mark Dootson supplied a potential fix to make this module work
           on Windows.
