@@ -43,7 +43,7 @@ else {
 
   my $objects;
   if ($os eq 'unix' or $os eq 'win32') {
-    $objects = join(' ', map {File::Spec->catfile($unzipdir, "$_$osobjext$o")} qw|unzip crc32 mrypt envargs explode extract fileio globals inflate list match process ttyio ubz2err unreduce unshrink zipinfo api|, "$os");
+    $objects = join(' ', map {File::Spec->catfile($unzipdir, "$_$osobjext$o")} qw|unzip crc32 crypt envargs explode extract fileio globals inflate list match process ttyio ubz2err unreduce unshrink zipinfo api|, "$os");
   }
   else {
     die "Funny OS. Don't know what to link.";
