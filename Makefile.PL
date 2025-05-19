@@ -6,12 +6,12 @@ use warnings;
 use Config;
 use vars qw/$os $osmakefile $osmaketarget $osobjext @winobjs $windllcmd $winsys/;
 
-my $unzip = "unzip-5.52";
+my $unzip = "unzip-6.00";
 
 if ( $^O =~ /^MSWin/i ) {
     $winsys = ($Config::Config{cc} eq 'cl') ? 'vc' : 'mingw';
     
-    my $obprefix = 'res/unzip-5.52';
+    my $obprefix = 'res/unzip-6.00';
     
     if( $winsys eq 'vc' ) {
         @winobjs = qw (api crci386l crctabl cryptl explodel extractl fileiol globalsl inflatel listl matchl ntl

@@ -6,7 +6,7 @@ $Verbose = 1;
 my $exe = $Config::Config{_exe};
 my $o   = $Config::Config{obj_ext};
 
-my $unzipdir = "unzip-5.52";
+my $unzipdir = "unzip-6.00";
 
 my $toptargettext;
 
@@ -43,7 +43,7 @@ else {
 
   my $objects;
   if ($os eq 'unix' or $os eq 'win32') {
-    $objects = join(' ', map {File::Spec->catfile($unzipdir, "$_$osobjext$o")} qw|unzip crc32 crctab crypt envargs explode extract fileio globals inflate list match process ttyio unreduce unshrink zipinfo api|, "$os");
+    $objects = join(' ', map {File::Spec->catfile($unzipdir, "$_$osobjext$o")} qw|unzip crc32 mrypt envargs explode extract fileio globals inflate list match process ttyio ubz2err unreduce unshrink zipinfo api|, "$os");
   }
   else {
     die "Funny OS. Don't know what to link.";
@@ -64,7 +64,7 @@ libmyunzip\$(LIB_EXT): \$(O_FILES)
     NAME   => 'Archive::Unzip::Burst',
     #SKIP   => [qw(all static static_lib dynamic dynamic_lib)],
     DEFINE            => '-fPIC -DDLL -O3', # e.g., '-DHAVE_SOMETHING'
-    INC               => "-I. -Iunzip-5.52 -Iunzip-5.52/$os", # e.g., '-I. -I/usr/include/other'
+    INC               => "-I. -Iunzip-6.00 -Iunzip-6.00/$os", # e.g., '-I. -I/usr/include/other'
     clean  => {
       'FILES' => "libmyunzip\$(LIB_EXT) $objects $unzipdir/unzipstb.o $unzipdir/*.so $unzipdir/*.dll $unzipdir/*.so.* $unzipdir/unzip_shlib$exe $unzipdir/Makefile $unzipdir/*.o"
     },
